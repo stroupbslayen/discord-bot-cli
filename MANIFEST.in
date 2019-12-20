@@ -1,0 +1,4 @@
+include *.txt
+recursive-include discord_bot_cli *.py
+recursive-exclude discord_bot_cli .vscode
+exclude *.bat
