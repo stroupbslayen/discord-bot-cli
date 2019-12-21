@@ -6,14 +6,14 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name=discord_bot_cli.__application__,
+    name="discord-bot-cli",
     version=discord_bot_cli.__version__,
-    description=discord_bot_cli.__description__,
+    description="A discord bot project helper with a useful command line interface",
     packages=["discord_bot_cli", "discord_bot_cli.commands"],
-    url=discord_bot_cli.__url__,
-    author=discord_bot_cli.__author__,
+    url="https://github.com/stroupbslayen/discord-bot-cli",
+    author="StroupBSlayen",
     author_email="",
-    license=discord_bot_cli.__license__,
+    license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires=">=3.6.0",

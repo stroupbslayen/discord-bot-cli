@@ -11,26 +11,26 @@ Prefix: `dbot`
 
 Available commands:
 ```
-  branches          Available branches of the discord bot
-  help              Displays help for a command
-  list              Lists commands
-  migrate           Run the database migrations.
-  new               Creates a new discord bot base.
- db
-  db:seed           Seed the database with records.
- make
-  make:cog          Creates a new Cog extension.
-  make:command      Creates a new Command extension.
-  make:migration    Create a new migration file.
-  make:model        Creates a new Model class.
-  make:seed         Create a new seeder file.
- migrate
-  migrate:install   Create the migration repository.
-  migrate:refresh   Reset and re-run all migrations.
-  migrate:reset     Rollback all database migrations.
-  migrate:rollback  Rollback the last database migration.
-  migrate:status    Show a list of migrations up/down.
-  ```
+branches          Available branches of the discord bot
+help              Displays help for a command
+list              Lists commands
+migrate           Run the database migrations.
+new               Creates a new discord bot base.
+db
+db:seed           Seed the database with records.
+make
+make:cog          Creates a new Cog extension.
+make:command      Creates a new Command extension.
+make:migration    Create a new migration file.
+make:model        Creates a new Model class.
+make:seed         Create a new seeder file.
+migrate
+migrate:install   Create the migration repository.
+migrate:refresh   Reset and re-run all migrations.
+migrate:reset     Rollback all database migrations.
+migrate:rollback  Rollback the last database migration.
+migrate:status    Show a list of migrations up/down.
+```
 
 ### Usage
 This package is built off of Orator ORM and most of the commands work the same way as in their [documentation](https://orator-orm.com/docs/0.9/). 
