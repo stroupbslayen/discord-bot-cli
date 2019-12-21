@@ -2,7 +2,7 @@
 
 from cleo import Application
 
-from .. import __application__, __version__
+from .. import __version__
 from .extensions import CogMakeCommand, CommandMakeCommand
 
 # Migrations
@@ -26,7 +26,7 @@ from .run import RunCommand
 # Seeds
 from .seeds import SeedCommand, SeedersMakeCommand
 
-application = Application(__application__, __version__, complete=True)
+application = Application("discord-bot-cli", __version__, complete=True)
 
 
 application.add(InstallCommand())
