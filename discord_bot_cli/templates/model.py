@@ -6,5 +6,7 @@ from bot.database import Model
 
 class {name}(Model):
     """{name} Model."""
-    pass
+
+    __table__ = '{name_plural}'
+
 '''

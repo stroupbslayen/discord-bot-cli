@@ -25,6 +25,7 @@ from .run import RunCommand
 
 # Seeds
 from .seeds import SeedCommand, SeedersMakeCommand
+from .makedocstring import MakeDocstringCommand
 
 application = Application("discord-bot-cli", __version__, complete=True)
 
@@ -36,7 +37,7 @@ application.add(RollbackCommand())
 application.add(StatusCommand())
 application.add(ResetCommand())
 application.add(RefreshCommand())
-
+application.add(MakeDocstringCommand())
 
 application.add(SeedersMakeCommand())
 application.add(SeedCommand())

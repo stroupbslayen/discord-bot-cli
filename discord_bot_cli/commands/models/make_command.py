@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import os
+from pathlib import Path
 
 import inflection
 from cleo import Command
-from orator.utils import mkdir_p
 
 from ...templates import model
 
@@ -21,20 +20,16 @@ class ModelMakeCommand(Command):
 
     def handle(self):
         name = self.argument("name")
-
+        self.cwd = Path().cwd()
         singular = inflection.singularize(inflection.tableize(name))
-        directory = self._get_path()
-        filepath = self._get_path(singular + ".py")
+        filepath = self._get_path(f"{singular}.py")
 
-        if os.path.exists(filepath):
+        if filepath.is_file():
             raise RuntimeError("The model file already exists.")
 
-        mkdir_p(directory)
-
-        parent = os.path.join(directory, "__init__.py")
-        if not os.path.exists(parent):
-            with open(parent, "w"):
-                pass
+        parent = self.cwd.joinpath("__init__.py")
+        if not parent.is_file():
+            parent.touch()
 
         stub = self._get_stub()
         stub = self._populate_stub(name, stub)
@@ -76,17 +71,19 @@ class ModelMakeCommand(Command):
 
         :rtype: str
         """
-        stub = stub.format(name=inflection.camelize(name))
+        stub = stub.format(
+            name=inflection.camelize(name),
+            name_plural=inflection.pluralize(name).lower(),
+        )
 
         return stub
 
     def _get_path(self, name=None):
         if self.option("path"):
-            directory = self.option("path")
+            directory = Path(self.option("path"))
         else:
-            directory = os.path.join(os.getcwd(), "bot/database/models")
-
+            directory = Path().cwd().joinpath("bot", "database", "models")
         if name:
-            return os.path.join(directory, name)
+            return directory.joinpath(name)
 
         return directory
