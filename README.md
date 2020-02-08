@@ -78,3 +78,8 @@ Different versions can be specified with the `-b, --branch=BRANCH` option for th
 Documentation for the [Orator ORM](https://orator-orm.com/docs/0.9/)
 
 Documentation for [discord.py](https://discordpy.readthedocs.io/en/latest/)
+
+# [v0.6.0]
+## Changelog
+- Added a `-s` / `--simple` option to the `new` command that will create a simple single bot file. For when you don't need something so robust. Example `dbot new simple_bot -s -t 8675309`
+- Added a `docstring` command to generate information about a table. Example `dbot docstring user_table`
