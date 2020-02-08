@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-0.6.0-orange)
+![version](https://img.shields.io/badge/version-0.6.1-orange)
 ![python](https://img.shields.io/badge/python-3.6|3.7-blue)
 
 # Discord Bot CLI
