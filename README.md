@@ -15,7 +15,7 @@ Prefix: `dbot`
 Available commands:
 ```
 branches          Available branches of the discord bot base
-docstring         Generate a docstring based from a table name
+docstring         Generate a docstring from a table name
 help              Displays help for a command
 list              Lists commands
 migrate           Run the database migrations.

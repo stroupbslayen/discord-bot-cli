@@ -7,7 +7,7 @@ from orator import DatabaseManager
 
 class MakeDocstringCommand(Command):
     """
-    Generate a docstring based on a table name
+    Generate a docstring from a table name
     docstring
         {table : Name of the table to generate the docstring for}
         {--c|connection=default : The connection to use}
