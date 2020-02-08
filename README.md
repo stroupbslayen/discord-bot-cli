@@ -14,8 +14,8 @@ Prefix: `dbot`
 
 Available commands:
 ```
-branches          Available branches of the discord bot
-docstring         Generate a docstring based on a table name
+branches          Available branches of the discord bot base
+docstring         Generate a docstring based from a table name
 help              Displays help for a command
 list              Lists commands
 migrate           Run the database migrations.
@@ -39,16 +39,22 @@ migrate:status    Show a list of migrations up/down.
 ### Usage
 This package is built off of the Orator ORM and most of the commands work the same way as in their [documentation](https://orator-orm.com/docs/0.9/). 
 
-You can create a new bot directory `bot_project` and pre-load your token like this:
+## Example
 ```cmd
 dbot new bot_project --token=8675309 
 ```
+Would create a new full bot project directory called `bot_project` and will download the latest version of the [discord bot framework](https://github.com/stroupbslayen/discord-bot).
 You can always change the token and your database connections in the `config.yaml` file in your projects main directory.
 
 CD into the project directory and you can easily add a cog/command using the `make` command:
 ```cmd
 dbot make:cog new_cog
 dbot make:command new_command
+```
+
+If you don't need something so complex, you can use the `-s` or `--simple` flag. This will create a basic single file discord bot:
+```CMD
+dbot new simple_bot -s -t 8675309
 ```
 
 ### Requirements
@@ -65,7 +71,9 @@ This project is licensed under MIT - see the [LICENSE](LICENSE) file for details
 
 ### Notes
 
-Here is the bot scaffolding the cli will download. Different versions can be specified with the `-b, --branch=BRANCH` option for the new command.
+[Here is the bot scaffolding the cli will download](https://github.com/stroupbslayen/discord-bot).
+
+Different versions can be specified with the `-b, --branch=BRANCH` option for the new command.
 
 Documentation for the [Orator ORM](https://orator-orm.com/docs/0.9/)
 
