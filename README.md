@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-0.6.1-orange)
+![version](https://img.shields.io/pypi/v/discord-bot-cli)
 ![python](https://img.shields.io/badge/python-3.6|3.7-blue)
 
 # Discord Bot CLI
@@ -79,7 +79,7 @@ Documentation for the [Orator ORM](https://orator-orm.com/docs/0.9/)
 
 Documentation for [discord.py](https://discordpy.readthedocs.io/en/latest/)
 
-# [v0.6.0]
+# [v0.6]
 ## Changelog
 - Added a `-s` / `--simple` option to the `new` command that will create a simple single bot file. For when you don't need something so robust. Example `dbot new simple_bot -s -t 8675309`
 - Added a `docstring` command to generate information about a table. Example `dbot docstring user_table`

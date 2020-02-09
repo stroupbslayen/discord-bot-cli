@@ -38,7 +38,9 @@ class GitHandler:
         sub = f"stroupbslayen-discord-bot-{branch.short_sha}"
         with zipfile.ZipFile(BytesIO(self._get_zip(branch))) as archive:
             for file in archive.infolist():
-                if "LICENSE" not in file.filename:
+                if not any(
+                    name in file.filename for name in ("LICENSE", "gitignore", "README")
+                ):
                     file.filename = file.filename.replace(sub, "")
                     archive.extract(file, project_directory)
 

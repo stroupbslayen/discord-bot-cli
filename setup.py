@@ -16,7 +16,7 @@ setup(
     license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires=">=3.6.0",
+    python_requires=">=3.6.8",
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
