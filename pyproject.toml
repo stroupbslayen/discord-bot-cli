@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "discord_bot_cli"
+version = "0.6.3"
+description = "A discord bot project helper with a useful command line interface"
+authors = ["StroupBSlayen"]
+license = "MIT"
+readme = "README.rst"
+repository ="https://github.com/stroupbslayen/discord-bot-cli"
+keywords=["discord", "discord.py", "orator", "discord bot"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.23.0"
+orator = "^0.9.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+dbot = "discord_bot_cli.commands.application:application.run"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
