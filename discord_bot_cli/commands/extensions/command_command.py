@@ -55,9 +55,7 @@ class CommandMakeCommand(Command):
 
         :rtype: str
         """
-        stub = stub.format(name=name.lower())
-
-        return stub
+        return stub.format(name=name.lower())
 
     def _get_path(self, name=None):
 

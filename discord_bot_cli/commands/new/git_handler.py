@@ -38,8 +38,9 @@ class GitHandler:
         sub = f"stroupbslayen-discord-bot-{branch.short_sha}"
         with zipfile.ZipFile(BytesIO(self._get_zip(branch))) as archive:
             for file in archive.infolist():
-                if not any(
-                    name in file.filename for name in ("LICENSE", "gitignore", "README")
+                if all(
+                    name not in file.filename
+                    for name in ("LICENSE", "gitignore", "README")
                 ):
                     file.filename = file.filename.replace(sub, "")
                     archive.extract(file, project_directory)
@@ -59,7 +60,7 @@ class GitHandler:
         url = "/repos/stroupbslayen/discord-bot/branches"
         try:
             branches = self._get_response(url)
-            branches = list(Branch(branch) for branch in branches.json())
+            branches = [Branch(branch) for branch in branches.json()]
             branches.reverse()
             return branches
         except:

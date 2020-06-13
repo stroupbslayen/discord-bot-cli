@@ -82,9 +82,8 @@ class Command(BaseCommand):
         accepted_files = ["config.yaml", "config.yml", "config.py"]
         for accepted_file in accepted_files:
             config_file = os.path.join(current_path, accepted_file)
-            if os.path.exists(config_file):
-                if self._handle_config(config_file):
-                    return True
+            if os.path.exists(config_file) and self._handle_config(config_file):
+                return True
 
         return False
 
@@ -111,7 +110,7 @@ class Command(BaseCommand):
 
         :rtype: dict
         """
-        if not path and not self.option("config"):
+        if not (path or self.option("config")):
             raise Exception("The --config|-c option is missing.")
 
         if not path:
@@ -138,7 +137,7 @@ class CleanConfig:
 
     def _clean(self, name, settings):
         if name.lower() != "default":
-            to_delete = list(key for key, value in settings.items() if not value)
+            to_delete = [key for key, value in settings.items() if not value]
             for item in to_delete:
                 del settings[item]
         return {name: settings}
@@ -146,6 +145,6 @@ class CleanConfig:
     @property
     def cleaned(self):
         clean_config = self.default_config
-        for name, settings in tuple(self.default_config["databases"].items()):
+        for name, settings in tuple(clean_config["databases"].items()):
             clean_config["databases"].update(self._clean(name, settings))
         return clean_config

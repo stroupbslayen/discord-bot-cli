@@ -71,12 +71,10 @@ class ModelMakeCommand(Command):
 
         :rtype: str
         """
-        stub = stub.format(
+        return stub.format(
             name=inflection.camelize(name),
             name_plural=inflection.pluralize(name).lower(),
         )
-
-        return stub
 
     def _get_path(self, name=None):
         if self.option("path"):

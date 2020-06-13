@@ -30,7 +30,7 @@ class MigrateMakeCommand(BaseCommand):
         table = self.option("table")
         create = bool(self.option("create"))
 
-        if not table and create is not False:
+        if not table and create:
             table = create
 
         path = self.option("path")
@@ -45,6 +45,4 @@ class MigrateMakeCommand(BaseCommand):
         """
         Write the migration file to disk.
         """
-        file_ = os.path.basename(creator.create(name, path, table, create))
-
-        return file_
+        return os.path.basename(creator.create(name, path, table, create))

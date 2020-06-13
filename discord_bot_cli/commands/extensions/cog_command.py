@@ -55,9 +55,7 @@ class CogMakeCommand(Command):
 
         :rtype: str
         """
-        stub = stub.format(name=inflection.camelize(name))
-
-        return stub
+        return stub.format(name=inflection.camelize(name))
 
     def _get_path(self, name=None):
 

@@ -76,9 +76,7 @@ class SeedersMakeCommand(BaseCommand):
         try:
             os.makedirs(path)
         except OSError as exc:
-            if exc.errno == errno.EEXIST and os.path.isdir(path):
-                pass
-            else:
+            if exc.errno != errno.EEXIST or not os.path.isdir(path):
                 raise
 
     def _build_class(self, name):
