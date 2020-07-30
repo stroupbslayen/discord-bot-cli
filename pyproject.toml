@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "discord_bot_cli"
-version = "0.6.3"
+version = "0.6.4"
 description = "A discord bot project helper with a useful command line interface"
 authors = ["StroupBSlayen"]
 license = "MIT"

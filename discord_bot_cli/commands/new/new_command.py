@@ -41,7 +41,7 @@ class NewCommand(Command):
                 self.warning(f"Unable to retrieve branch {version}")
                 return
         else:
-            branch = handler.get_latest_branch()
+            branch = handler.get_latest_version()
         if branch:
             self.info(f"Using branch {branch.name}")
             handler.unzip(name, branch)

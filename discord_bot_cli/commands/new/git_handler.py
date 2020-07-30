@@ -66,10 +66,11 @@ class GitHandler:
         except:
             return []
 
-    def get_latest_branch(self) -> Branch:
+    def get_latest_version(self) -> Branch:
         branches = self._get_branches()
-        if branches:
-            return branches[0]
+        for branch in branches:
+            if branch.name.replace(".", "", 1).isdigit():
+                return branch
 
     def get_branch(self, version: str) -> Branch:
         branches = self._get_branches()
